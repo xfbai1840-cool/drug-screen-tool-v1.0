@@ -27,7 +27,7 @@ with st.sidebar:
     st.divider()
     
     THRESHOLD_HIT = st.slider("Hit 判定阈值 (Ratio)", 0.0, 1.0, 0.4, 0.05)
-    LIMIT_HIGH_SIGNAL = st.number_input("高信号剔除倍数", value=3.5)
+    LIMIT_HIGH_SIGNAL = st.number_input("高信号剔除倍数", value=35)
     
     st.divider()
     st.info("默认配置：\n内参: 第2列 (前5个)\n毒性: 第13列 (前5个)\n药物: 第3-12列")
@@ -208,4 +208,5 @@ if uploaded_file is not None:
             st.error("分析完成，但没有有效数据（可能全部被剔除或格式错误）。")
             
     except Exception as e:
+
         st.error(f"文件读取或分析出错: {e}")
